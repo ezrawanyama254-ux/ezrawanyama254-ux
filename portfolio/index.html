@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezra Wanyama | Software & Web App Architect</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+            --hover-color: #1f6feb;
+            --nav-bg: rgba(22, 27, 34, 0.95);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; padding-top: 70px; display: flex; flex-direction: column; align-items: center; }
+
+        /* Navbar & Hamburger */
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; z-index: 1000; }
+        .nav-brand { font-weight: 700; color: #fff; font-size: 1.1rem; text-decoration: none; }
+        .hamburger { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { width: 25px; height: 3px; background: var(--text-color); border-radius: 2px; transition: 0.3s; }
+
+        .nav-links { position: absolute; top: 60px; left: 0; width: 100%; background: var(--card-bg); border-bottom: 1px solid var(--border-color); display: flex; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
+        .nav-links.active { max-height: 300px; }
+        .nav-links a { padding: 15px 20px; color: var(--text-color); text-decoration: none; border-bottom: 1px solid var(--border-color); font-weight: 500; }
+        .nav-links a:hover { background: var(--hover-color); color: #fff; }
+
+        /* Container & Layout */
+        .container { width: 100%; max-width: 700px; padding: 20px; }
+        .profile-header { text-align: center; margin-bottom: 30px; }
+        .avatar { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color); margin-bottom: 15px; }
+        h1 { font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
+        p.subtitle { color: var(--accent-color); font-size: 0.95rem; font-weight: 600; margin-bottom: 15px; }
+
+        /* Sections & Cards */
+        section { margin-bottom: 40px; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .card h2 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
+        p, li { font-size: 0.9rem; color: #8b949e; margin-bottom: 10px; }
+        ul { padding-left: 20px; }
+        .btn-group { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .btn { background-color: var(--hover-color); color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; display: inline-block; }
+        .btn:hover { background-color: #388bfd; }
+        .btn-alt { background-color: transparent; border: 1px solid var(--border-color); color: var(--text-color); }
+        .btn-alt:hover { border-color: var(--accent-color); color: #fff; }
+        footer { text-align: center; margin-top: 40px; font-size: 0.75rem; color: #484f58; padding-bottom: 20px; }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#home" class="nav-brand">Ezra Wanyama</a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+        <div id="navLinks" class="nav-links">
+            <a href="#home" onclick="toggleMenu()">Home & Vision</a>
+            <a href="#projects" onclick="toggleMenu()">Web Apps & AI Systems</a>
+            <a href="#contact" onclick="toggleMenu()">Direct Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HOME / VISION SECTION -->
+        <section id="home">
+            <div class="profile-header">
+                <img src="assets/avatar.jpg" alt="Ezra Wanyama" class="avatar">
+                <h1>Ezra Wanyama Waswa</h1>
+                <p class="subtitle">Full-Stack Web App & AI Systems Architect</p>
+                <p>Nakuru & Navakholo, Kenya | Computer Science Undergraduate (UoPeople)</p>
+            </div>
+
+            <div class="card">
+                <h2>The Sovereign Difference</h2>
+                <p>I don't just build static websites or basic text pages. I engineer <strong>high-performance web applications and standalone software utilities</strong> that outperform standard Play Store Android APKs—delivering seamless, zero-friction digital experiences across any device.</p>
+                <p>My AI systems are architected for absolute usability: highly intelligent, autonomous workflows designed so that anyone, regardless of technical experience, can control and leverage them to maximize output.</p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn">Explore Web Apps & AI</a>
+                    <a href="#contact" class="btn btn-alt">Hire / Contract Me</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Core Technical Competencies</h2>
+                <ul>
+                    <li><strong>Full-Stack Web Apps:</strong> Python, JavaScript (ES6+), HTML5, CSS3, Node.js, Express, Flask, SQLite, Supabase.</li>
+                    <li><strong>AI & Automation Engineering:</strong> Autonomous Bot Architectures, LLM Pipeline Integration, Zero-Barrier User Control Systems.</li>
+                    <li><strong>Sovereign Infrastructure:</strong> Linux Mobile Terminals (Termux CLI), Git/GitHub Version Control, Render Cloud Deployments.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECTS / WEB APPS SECTION -->
+        <section id="projects">
+            <div class="profile-header" style="margin-bottom: 20px;">
+                <h1>Production Software Portfolio</h1>
+                <p class="subtitle">Advanced Web Applications & Intelligent Systems</p>
+            </div>
+
+            <div class="card">
+                <h2>Navakholo TerraHub Initiative (NTI) Platform</h2>
+                <p>Full-stack web application driving digital skills training, computer science education, and remote work development ecosystems.</p>
+                <a href="https://nti-com.onrender.com" target="_blank" class="btn">Launch Live App →</a>
+            </div>
+
+            <div class="card">
+                <h2>NTI Student Elite ID Verifier</h2>
+                <p>Automated cryptographic-style validation system for secure credential management and community verification.</p>
+                <a href="https://nti-student-elite-id.onrender.com/portal-x9k2.html" target="_blank" class="btn">Launch Live App →</a>
+            </div>
+
+            <div class="card">
+                <h2>UniRoute Platform</h2>
+                <p>Intelligent academic navigation and resource-routing utility engineered for modern university undergraduates.</p>
+                <a href="https://uniroute.onrender.com" target="_blank" class="btn">Launch Live App →</a>
+            </div>
+
+            <div class="card">
+                <h2>The Smartphone Scientist</h2>
+                <p>Advanced publishing platform and media engine for technology insights, articles, and motivational engineering.</p>
+                <a href="https://the-smartphone-scientist.onrender.com" target="_blank" class="btn">Launch Live Platform →</a>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="profile-header" style="margin-bottom: 20px;">
+                <h1>Direct Contact & Channels</h1>
+                <p class="subtitle">Open for Global Remote Engineering Roles & Contracts</p>
+            </div>
+
+            <div class="card">
+                <h2>Connect With the Architect</h2>
+                <p>Global clients, tech founders, and enterprises looking for high-impact web apps and AI automation can reach out directly:</p>
+                <div class="btn-group">
+                    <a href="mailto:ezrawanyama254@gmail.com" class="btn">Email Me</a>
+                    <a href="https://github.com/ezrawanyama254-ux" target="_blank" class="btn btn-alt">Sovereign GitHub</a>
+                    <a href="https://www.linkedin.com/in/ezra-wanyama-ba8257437?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="btn btn-alt">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Ezra Wanyama Waswa. Execution over excuses.
+        </footer>
+    </div>
+</body>
+</html>
